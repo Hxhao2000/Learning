@@ -7,13 +7,13 @@ firewall和iptables都属于Linux系统的防火墙，二者之间存在一定�
 
 1.配置ip地址前首先ifconfig或ip addr查看网卡信息并获取到网卡的名称
 
-![image-20230528192057232](https://raw.githubusercontent.com/Hxhao2000/Learning/master/images/image-20230528192057232.png)
+![image-20230528192057232](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20230528192057232.png)
 
 2.进入到网卡配置目录
 
 cd /etc/sysconfig/network-scripts/，找到配置文件为ifcfg-em2
 
-![image-20220302165627133](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20220302165627133.png)
+![image-20220302165627133](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20220302165627133.png)
 
 修改对应的网卡，例如em2对应ifcfg-em2，在保证配置文件与网卡数相等的情况下，重启network.service
 

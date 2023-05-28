@@ -56,7 +56,7 @@
 
 ​		多态是同一个行为具有多个不同表现形式或形态的能力，换句话说，多态就是同一个接口，使用不同的实例而执行不同操作。如图所示：
 
-![转自菜鸟教程](https://www.runoob.com/wp-content/uploads/2013/12/java-polymorphism-111.png)
+![转自菜鸟教程](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/java_polymorphism_from_runoob.png)
 
 多态存在的三个必要条件：
 
@@ -199,7 +199,7 @@ public class TestEquals {
 
 ​		Java从==Throwable==直接派生出==Exception==和==Error==。其中==Exception==是可以抛出的基本类型，在Java类库、方法以及运行时故障中都可能抛出==Exception型==异常。==Exception==表示可以恢复的异常，是编译器可以捕捉到的；==Error==表示编译时和系统错误，表示系统在运行期间出现了严重的错误，属于不可恢复的错误，由于这属于JVM层次的严重错误，因此这种错误会导致程序终止执行。==Exception==又分为检查异常和运行时异常。异常类的结构层次图如下：
 
-![img](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/316892-20151218125019552-659007001.png)
+![img](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/316892-20151218125019552-659007001.png)
 
 ​		而按照编译器检查方式划分，异常又可以分为检查型异常（CheckedException）和非检查型异常 （UncheckedException）。Error和RuntimeException合起来称为UncheckedException，之所以这么称呼，是因为编译器不检查方法是否处理或者抛出这两种类型的异常，因此编译期间出现这种类型的异常也不会报错，默认由虚拟机提供处理方式。除了Error 和RuntimeException这两种类型的异常外，其它的异常都称为Checked异常。
 
@@ -207,7 +207,7 @@ public class TestEquals {
 
 例如：
 
-![image-20210805213635442](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210805213635442.png)
+![image-20210805213635442](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210805213635442.png)
 
 ```java
 public class MyTest {
@@ -226,7 +226,7 @@ public class MyTest {
 }
 ```
 
-![image-20210805213828520](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210805213828520.png)
+![image-20210805213828520](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210805213828520.png)
 
 ```java
 public class MyTest {

@@ -8,4 +8,4 @@
 
 > UNIQUE KEY `index_shop_user_doc_id` (`order_id`,`shop_user_id`,`doc_id`) USING BTREE
 
-![img](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/70b0afca2475d9b0a9fa5d2a6bcf1c1d.png)
+![img](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/70b0afca2475d9b0a9fa5d2a6bcf1c1d.png)

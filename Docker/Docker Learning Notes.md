@@ -56,7 +56,7 @@ Docker的思想在于隔离，将每个箱子隔离起来。
 
 Docker 公司位于旧金山，由法裔美籍开发者和企业家 Solumon Hykes 创立，其标志如下图所示。
 
-![image-20210609114123053](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210609114123053.png)
+![image-20210609114123053](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210609114123053.png)
 
 
 
@@ -86,7 +86,7 @@ Docker是基于Go语言开发的开源项目。
 
 > 传统的虚拟机技术
 
-![虚拟机技术](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/vmware-tech.svg)
+![虚拟机技术](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/vmware-tech.svg)
 
 **缺点：**
 
@@ -100,7 +100,7 @@ Docker是基于Go语言开发的开源项目。
 
 ==容器化技术也是一种虚拟机技术，但它并没有模拟一个完整的操作系统==
 
-![容器化技术](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/container-tech.svg)
+![容器化技术](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/container-tech.svg)
 
 比较Docker和传统虚拟机的不同：
 
@@ -134,7 +134,7 @@ Docker是内核级别的虚拟化，可以在一个物理机上运行多个容�
 
 ### docker的基本组成部分
 
-![Docker的架构图](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210609131533801.png)
+![Docker的架构图](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210609131533801.png)
 
 **镜像（images）：**
 
@@ -204,11 +204,11 @@ $ sudo rm -rf /var/lib/docker
 
 1.登录阿里云，在控制台中找到容器服务
 
-![阿里云控制台](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210609151801633.png)
+![阿里云控制台](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210609151801633.png)
 
 2.找到镜像加速地址
 
-![阿里云镜像加速器](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210609152049164.png)
+![阿里云镜像加速器](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210609152049164.png)
 
 ### 底层原理
 
@@ -216,13 +216,13 @@ $ sudo rm -rf /var/lib/docker
 
 Docker是一个Client-Server结构的系统，Docker的守护进程运行在主机上。通过Socket从客户端访问，Docker-Server收到Docker-Client的命令后，将执行命令。
 
-![docker工作原理](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210609153312469.png)
+![docker工作原理](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210609153312469.png)
 
 **Docker为什么比VM快？**
 
 1、Docker有着更少的抽象层
 2、Docker利用宿主机的内核，VM需要加载操作系统的内核
-![docker与VM对比](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210609153449166.png)
+![docker与VM对比](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210609153449166.png)
 
 docker新建一个容器时，不需要重新加载一个OS的内核，通过了利用宿主机的内核，省略VM对OS内核的模拟过程。
 
@@ -329,7 +329,7 @@ Options:
 
 **docker rmi** 删除镜像
 
-![当前服务器镜像](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210609160515430.png)
+![当前服务器镜像](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210609160515430.png)
 
 ```shell
 # docker rmi -f 镜像id	# 删除指定id的镜像
@@ -509,8 +509,6 @@ docker cp 容器id:容器内路径  目的主机路径
 
 ### 小结
 
-![docker命令图解](F:\BackEndKnowledge\backendtodo\Docker\jpg\docker命令图解.jpg)
-
 ```shell
 attach      Attach local standard input, output, and error streams to a running container
 build       Build an image from a Dockerfile
@@ -645,7 +643,7 @@ bootfs（boot file system）主要包含bootloader和kernel，bootloader主要�
 
 rootfs（root file system），在bootfs之上。包含的就是典型Linux系统中的/dev, /proc, /bin, /etc等标准目录和文件。rootfs就是各种不同的操作系统发行版，比如Ubuntu， CentOS等等。
 
-![镜像加载原理图](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610140208121.png)
+![镜像加载原理图](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610140208121.png)
 
 对于一个精简的OS，rootfs可以很小，只需要包含最基本的命令，工具和程序库就可以了，因为底层直接用Host的kernel，自己只需要提供rootfs就可以了。由此可见对于不同的linux发行版本，bootfs基本是一致的，rootfs会有差别，因此不同的发行版可以公用bootfs。
 
@@ -672,7 +670,7 @@ docker.io/library/redis:latest
 
 通过docker image inspect 查看镜像分层。
 
-![镜像分层](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610152402910.png)
+![镜像分层](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610152402910.png)
 
 **理解：**
 
@@ -682,11 +680,11 @@ docker.io/library/redis:latest
 
 该镜像当前已经包含3个镜像层，如下图所示（演示用的简单例子）。
 
-![简单例子](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610152950520.png)
+![简单例子](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610152950520.png)
 
 在添加额外的镜像层的同时，镜像始终是当前所有镜像的组合。
 
-![添加额外的镜像](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610153903983.png)
+![添加额外的镜像](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610153903983.png)
 
 上图中的情况下，上层镜像层中的文件覆盖了底层镜像层中的文件。这样就使得文件的更新版本作为一个新镜像层添加到镜像中。
 
@@ -698,7 +696,7 @@ Docker在Windows上仅支持windowsfilter一种存储引擎，该引擎基于NTF
 
 下图展示了与系统显示相同的三层镜像。所有的镜像层堆叠并合并，对外提供统一的视图。
 
-![统一视图](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610154609837.png)
+![统一视图](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610154609837.png)
 
 > 特点
 
@@ -706,9 +704,9 @@ Docker镜像都是只读的，当容器启动时，一个新的可写层被加�
 
 下图中为Nginx镜像在添加一个Nginx.conf的备份之后生成的容器提交成的镜像与原生镜像的对比。
 
-![添加了备份的nginx镜像](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610160455345.png)
+![添加了备份的nginx镜像](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610160455345.png)
 
-![没添加备份的原生nginx镜像](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610160534599.png)
+![没添加备份的原生nginx镜像](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610160534599.png)
 
 ### commit镜像
 
@@ -744,13 +742,13 @@ docker run -it -v 主机目录:容器内目录
 [root@iZuf66ox0kxji2tg3f4kbeZ hxh]# docker run -it -v /home/hxh/centos:/home centos /bin/bash
 ```
 
-![容器元数据](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610162821343.png)
+![容器元数据](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610162821343.png)
 
 ### 具名和匿名挂载
 
-![匿名挂载](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610164541326.png)
+![匿名挂载](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610164541326.png)
 
-![卷详情](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610164643647.png)
+![卷详情](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610164643647.png)
 
 所有的docker容器内的卷，没有指定目录的情况下，默认位置为`/var/lib/docker/volumes/xxxx/_data`
 
@@ -781,7 +779,7 @@ docker run -d -P --name nginx02 -v xxxx:/etc/nginx:rw	nginx
 
 >  容器同步数据
 
-![容器同步数据](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210610171047268.png)
+![容器同步数据](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210610171047268.png)
 
  ```shell
  docker run -it --name containerName --volumes-from containersName imageName:tag(imageId)
@@ -811,9 +809,9 @@ dockerfile是用来构建docker镜像的文件！它是一个命令参数脚本�
 
 4、docker push 发布镜像（DockerHub、阿里云仓库）
 
-![DockerHub-CentOS](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210615160525121.png)
+![DockerHub-CentOS](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210615160525121.png)
 
-![github](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210615160616397.png)
+![github](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210615160616397.png)
 
 ### DockerFile构建过程
 
@@ -841,7 +839,7 @@ Docker容器：镜像的实例化，运行以提供服务
 
 ### DockerFile的指令
 
-![img](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/dockerfile-command.jpg)
+![img](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/dockerfile-command.jpg)
 
 ```shell
 FROM			# 基础镜像，从这里开始构建
@@ -862,7 +860,7 @@ ENV				# 构建时设置环境变量
 
 Docker Hub中99%的镜像大批由`scratch`这个基础镜像开始的 FROM scratch
 
-![github](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210615160616397.png)
+![github](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image_20210615160616397.png)
 
 > 创建一个自己的CentOS
 
@@ -887,11 +885,11 @@ CMD /bin/bash
 # docker build -f dockerfile文件路径 -t 镜像名:[tag]
 ```
 
-![mycentos](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210615164258035.png)
+![mycentos](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210615164258035.png)
 
 我们可以列出本地进行的变更历史
 
-![docker-history](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210615164509027.png)
+![docker-history](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210615164509027.png)
 
 
 
@@ -1024,7 +1022,7 @@ drwxr-xr-x  20 root root 262 Dec  4  2020 var
 
 ### 小结
 
-![docker流程](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/docker-flowchart.jpg)
+![docker流程](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/docker-flowchart.jpg)
 
 
 
@@ -1034,7 +1032,7 @@ drwxr-xr-x  20 root root 262 Dec  4  2020 var
 
 1、查看ip地址
 
-![测试](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210616151351269.png)
+![测试](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210616151351269.png)
 
 2、启动docker容器
 
@@ -1064,7 +1062,7 @@ PING 172.18.0.2 (172.18.0.2) 56(84) bytes of data.
 
 3、再次查看ip地址
 
-![image-20210616153209017](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210616153209017.png)
+![image-20210616153209017](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210616153209017.png)
 
 > 原理
 
@@ -1088,7 +1086,7 @@ PING 172.18.0.2 (172.18.0.2) 56(84) bytes of data.
 
 绘制网络模型图：
 
-![docker网络模型图](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/docker-network.svg)
+![docker网络模型图](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/docker-network.svg)
 
 
 
@@ -1102,7 +1100,7 @@ PING 172.18.0.2 (172.18.0.2) 56(84) bytes of data.
 
 Docker使用的是Linux的桥接，宿主机中是一个Docker容器的网桥 docker0
 
-![linux本机总体框架](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/framework.svg)
+![linux本机总体框架](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/framework.svg)
 
 Docker中的所有的网络接口都是虚拟的。转发效率高。
 
@@ -1136,7 +1134,7 @@ ping: tomcat03: Name or service not known
 
 探究：
 
-![docker inspect](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210616162934011.png)
+![docker inspect](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210616162934011.png)
 
 ```shell
 # 查看 hosts 配置
@@ -1159,7 +1157,7 @@ ff02::2	ip6-allrouters
 
 > 查看所有的docker 网络
 
-![docker网络](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210616163721139.png)
+![docker网络](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210616163721139.png)
 
 **网络模式：**
 
@@ -1310,9 +1308,9 @@ ping: tomcat01-mynet: Name or service not known
 
 
 
-![连通](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210616170050452.png)
+![连通](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210616170050452.png)
 
-![命令详情](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210616170200645.png)
+![命令详情](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210616170200645.png)
 
 ```shell
 # 测试连通 tomcat01 至 mynet
@@ -1380,7 +1378,7 @@ ping: tomcat01-mynet: Name or service not known
 
 ### 简介
 
-​		Docker中结合dockerfile，并通过docker build 和docker run 可以手动操作单个容器，每个容器提供一种微服务，而开发过程中，有时需要一次配置数量众多的容器，并且这些容器间还存在一定的依赖关系。在这种情况下，Compose的作用体现了出来，Docker Compose可以轻松高效地管理容器，它可以同时定义和运行多个容器。
+Docker中结合dockerfile，并通过docker build 和docker run 可以手动操作单个容器，每个容器提供一种微服务，而开发过程中，有时需要一次配置数量众多的容器，并且这些容器间还存在一定的依赖关系。在这种情况下，Compose的作用体现了出来，Docker Compose可以轻松高效地管理容器，它可以同时定义和运行多个容器。
 
 > 官方介绍
 
@@ -1431,7 +1429,7 @@ Compose中重要的概念：
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
-![image-20210618114928193](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210618114928193.png)
+![image-20210618114928193](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210618114928193.png)
 
 2、授权
 
@@ -1439,13 +1437,13 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-![image-20210618140933445](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210618140933445.png)
+![image-20210618140933445](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210618140933445.png)
 
 ```shell
 docker-compose version # 查看版本号
 ```
 
-![image-20210618141158582](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210618141158582.png)
+![image-20210618141158582](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210618141158582.png)
 
 ### yaml规则
 
@@ -1479,7 +1477,7 @@ networks:
 configs:
 ```
 
-![depends_on](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20210619162517834.png)
+![depends_on](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20210619162517834.png)
 
 ### 开源项目
 

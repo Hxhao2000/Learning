@@ -12,7 +12,7 @@
 - 第二层包含了大多数MySQL的核心服务功能，包括查询解析、分析、优化、缓存以及所有的内置函数（日期、字符串、数字、加密）等函数，所有的跨存储引擎的功能都在这一层实现：存储过程、触发器、视图等。
 - 第三层包含了存储引擎。存储引擎负责MySQL中数据的存储和提取，每个存储引擎都有它的优势和劣势。服务器通过API与存储引擎进行通信，这些接口屏蔽了不同存储引擎之间的差异，使得这些差异对于上层查询过程透明。API中包含几十个底层函数，用于执行诸如“开始一个事务”或者“根据主键提取一行记录”等操作。不同存储引擎之间不会相互通信，而只是简单地响应上层服务器的请求。
 
-![MySQL服务器逻辑架构图](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/MySQL%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%80%BB%E8%BE%91%E6%9E%B6%E6%9E%84%E5%9B%BE.svg)
+![MySQL服务器逻辑架构图](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/MySQL_Architecture.svg)
 
 ##### 1.1.1 连接管理与安全性
 
@@ -393,7 +393,7 @@ SLEEP(1),
 NOW(), CURRENT_TIMESTAMP(), SYSDATE()
 ```
 
-![image-20220311165715148](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/image-20220311165715148.png)
+![image-20220311165715148](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/image-20220311165715148.png)
 
 ### docker起mysql服务相关问题
 
@@ -455,6 +455,6 @@ MySQL有FULLTEXT、NORMAL、SPATIAL、UNIQUE四种索引（PRIMARY实际上属�
 - Hash索引中的复合索引为整个索引键的哈希值，因此不能用于部分索引查询
 >  最左匹配原则
 
-![在这里插入图片描述](https://notes-docker-images.oss-cn-beijing.aliyuncs.com/img/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1RvbXdpbGRib2Fy,size_16,color_FFFFFF,t_70.png)
+![explain](https://raw.githubusercontent.com/Hxhao2000/ImagesBed/master/Images/explain_xmind.png)
 
 ### FIND_IN_STR和LOCATE函数

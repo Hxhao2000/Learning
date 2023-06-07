@@ -12,34 +12,34 @@
 
 ### 数学证明
 
-> 由于我们的`c`选择了99999989，因此为保证唯一性，我们的id最大为99999989，以做到$\{id\}$域和$\{code\}$域中的元素一一对应。
+> 由于我们的`c`选择了99999989，因此为保证唯一性，我们的id最大为99999989，以做到{ id }域和{ code }域中的元素一一对应。
 
-**定理一**：不存在$id_1, id_2 \in[1, c], id_1 \neq id_2$使得$code_1 == code_2$，其中$code_1$为$id_1$的映射结果，$code_2$为$id_2$的映射结果。
+$定理一：不存在id_1, id_2 \in[1, c], id_1 \neq id_2使得code_1 == code_2，其中code_1为id_1的映射结果，code_2为id_2的映射结果。$
 
 **证：**
 
 我们可以使用反证法。
 
-我们假设存在$id_1, id_2 \in[1, c], id_1 \neq id_2$使得$code_1 == code_2$，则
+$我们假设存在id_1, id_2 \in[1, c], id_1 \neq id_2使得code_1 == code_2，则$
 
 1. $(id_1 \times a + b) \bmod c == (id_2 \times a + b) \bmod c$
 
 2. $id_1 \times a + b - (id_2 \times a + b) = n \times c,\,n\in N $
 3. $id_1 - id_2 = n \times c \div a$
-4. 由于$a$和$c$都是素数，且$id_1-id_2 \in N$，因此$n = m \times a, m \in N$，则$n \times c \div a = n \times m \times c$
-5. $id_1 - id_2 = n \times c \div a = n \times m \times c$，由于$n,m \in N$且$id_1 - id_2 \neq 0$，则$\left| id_1-id_2 \right| \geq c$
-6. 又因$id_1, id_2 \in[1, c]$，则$\left| id_1-id_2 \right| < c$
+4. $由于a和c都是素数，且id_1-id_2 \in N，因此n = m \times a, m \in N，则n \times c \div a = n \times m \times c$
+5. $id_1 - id_2 = n \times c \div a = n \times m \times c，由于n,m \in N且id_1 - id_2 \neq 0，则\left| id_1-id_2 \right| \geq c$
+6. $又因id_1, id_2 \in[1, c]，则\left| id_1-id_2 \right| < c$
 7. `5`与`6`的结论冲突，因此假设不成立，故**定理一成立**
 
-**定理二**：任取$id \in[1, c]$，都有唯一的$code \in [0, c-1]$为$id$的映射结果。
+$定理二：任取id \in[1, c]，都有唯一的code \in [0, c-1]为id的映射结果$。
 
 **证：**
 
-1. 由$code = (id \times a + b) \bmod c$，可得$code \in [0, c-1]$
+1. $由code = (id \times a + b) \bmod c，可得code \in [0, c-1]$
 
-2. 由`定理一`，任取$id_1, id_2 \in[1, c], id_1 \neq id_2$，必有$code_1 \neq code_2$
+2. $由定理一，任取id_1, id_2 \in[1, c], id_1 \neq id_2，必有code_1 \neq code_2$
 
-3. 由 $id \in[1, c],则\{id\}$域的大小为`c`，由$code \in [0, c-1],则\{code\}$域的大小也为`c`
+3. $由 id \in [1, c]，则id域的大小为c，由code \in [0, c-1]，则code域的大小也为c$
 4. 结合`2`和`3`，可得**定理二成立**
 
 ### 实验
